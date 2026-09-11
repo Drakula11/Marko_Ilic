@@ -1,157 +1,776 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta name="description" content="Personal coaching portfolio of Marko Ilic, water polo coach and former athlete. Coaching philosophy, contact info and background.">
-  <meta name="keywords" content="Marko Ilic, Water Polo, Player, Coach, Athlete">
-  <meta name="author" content="Marko Ilić">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Marko Ilić - Water Polo Coach</title>
-  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Montserrat', sans-serif;
-      background-color: #ffffff;
-      color: #003366;
-    }
-    header {
-      background-color: #003366;
-      color: #ffcc00;
-      padding: 1.5rem;
-      text-align: center;
-    }
-    nav {
-      background-color: #ffcc00;
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 2rem;
-      padding: 1rem 0;
-    }
-    nav a {
-      text-decoration: none;
-      color: #003366;
-      font-weight: bold;
-    }
-    section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: 0 auto;
-    }
-    .highlight {
-      background-color: #e6f0ff;
-      border-left: 5px solid #003366;
-      padding: 1rem;
-      margin: 1.5rem 0;
-    }
-    .highlight2 {
-      background-color: #fff9e6;
-      border-left: 5px solid #003366;
-      padding: 1rem;
-      margin: 1.5rem 0;
-    }
-    .video {
-      display: flex;
-      justify-content: center;
-      margin: 2rem 0;
-    }
-    .video iframe {
-      width: 100%;
-      max-width: 720px;
-      height: 405px;
-    }
-    footer {
-      background-color: #003366;
-      color: #fff;
-      text-align: center;
-      padding: 1rem;
-    }
-    img {
-      max-width: 100%;
-      height: auto;
-      border-radius: 8px;
-      margin: 1rem 0;
-    }
-  </style>
+
+  <meta
+    name="description"
+    content="Marko Ilic coaching, athlete development, private lessons and training applications."
+  >
+  <meta
+    name="keywords"
+    content="Marko Ilic, water polo, coach, private lessons, youth training, athlete development"
+  >
+  <meta name="author" content="Marko Ilic">
+  <meta name="theme-color" content="#081612">
+
+  <title>Marko Ilic | Water Polo Coach</title>
+
+  <link rel="icon" type="image/png" href="favicon.png">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Oswald:wght@500;600;700&display=swap"
+    rel="stylesheet"
+  >
+
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
 </head>
+
 <body>
-  <header>
-    <h1>Marko Ilić</h1>
-    <p>Water Polo Coach<br></p>
+
+  <!-- ================================================================ -->
+  <!-- HEADER                                                           -->
+  <!-- ================================================================ -->
+  <header class="site-header" id="top">
+
+    <a class="brand" href="#top" aria-label="Marko Ilic home">
+      <img class="brand-logo" src="mi-logo.png" alt="MI sports logo">
+
+      <span class="brand-copy">
+        <strong data-i18n="brandName">MARKO ILIC</strong>
+        <small data-i18n="brandTagline">WATER POLO COACHING</small>
+      </span>
+    </a>
+
+    <div class="header-actions">
+
+      <div class="lang-switcher" aria-label="Language switcher">
+        <button class="lang-btn active" type="button" data-lang="en">EN</button>
+        <button class="lang-btn" type="button" data-lang="sr">SR</button>
+      </div>
+
+      <button
+        class="nav-toggle"
+        type="button"
+        aria-label="Open menu"
+        aria-expanded="false"
+        aria-controls="mobile-nav"
+      >
+        <span class="nav-toggle-copy" data-i18n="menuLabel">Menu</span>
+
+        <span class="nav-toggle-icon" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </span>
+      </button>
+
+    </div>
+
   </header>
 
-  <nav>
-    <a href="#about">About</a>
-    <a href="#career">Career</a>
-    <a href="#education">Education</a>
-    <a href="#media">Media</a>
-    <a href="#contact">Contact</a>
-  </nav>
+  <!-- Full-screen menu is OUTSIDE the fixed header on purpose. -->
+  <!-- This keeps it fixed to the viewport even after the page is scrolled. -->
+  <div class="mobile-nav" id="mobile-nav" aria-label="Main navigation">
 
-  <section id="about">
-    <h2>About</h2>
-    <p>Marko Ilić is an experienced water polo coach with a strong background in training youth athletes, both in the U.S. and Europe. As head coach of the 18U teams at Channel Islands United (2024–2025), he focuses on building solid technical foundations, team tactics, and a culture of respect and growth.</p>
-    <p>He has coached at elite-level camps across Texas and California, working with players aged 14–18, and has also led water polo and swimming programs in Serbia, including organizing camps for kids as young as six.</p>
-    <p>In addition to team coaching, Marko works as a personal coach, helping individuals of all ages improve fitness, technique, and confidence in the water. Whether it’s overcoming fear, refining posture, or preparing for high-level performance, his coaching is personalized, results-driven, and deeply supportive.</p>
-    <p>Marko holds a degree from the Faculty of Sports and Physical Education in Belgrade, where he also served as a ski demonstrator, lifeguard, and research assistant. His hands-on leadership and passion for working with young athletes make him a trusted mentor for developing both skill and character.</p>
-    <img src="marko8.jpg" alt="Marko Ilić">
-  </section>
+    <div class="mobile-nav-inner">
 
-  <section id="career">
-    <h2>Career Highlights</h2>
-    <div class="highlight">
-      <h3>UC Santa Barbara</h3>
-      <p>Player from 2024–2025 | Coach since 2025</p>
-    </div>
-    <div class="highlight">
-      <h3>Water Polo Club Šabac</h3>
-      <p>Secured the double crown by winning both the national championship and the cup, establishing himself as one of the top and most influential defenders in both tournaments.</p>
-    </div>
-    <div class="highlight">
-      <h3>Water Polo Club Zemun</h3>
-      <p>Revitalized the team and captained them to promotion to a higher league.</p>
-    </div>
-    <div class="highlight">
-      <h3>Serbian National Junior Team</h3>
-      <p>Participant in several international tournaments and youth championships.</p>
-    </div>
-  </section>
+      <p class="mobile-nav-eyebrow" data-i18n="mobileMenuEyebrow">
+        TRAIN • COMPETE • DEVELOP
+      </p>
 
-  <section id="education">
-    <h2>Education</h2>
-    <div class="highlight2">
-      <h3>Faculty of Sports and Physical Education, University of Belgrade, Serbia  2020 – 2024</h3>
-      <p><b><i>- Bachelor of Physical Education and Sport</i></b></p>
-    </div>
-    <div class="highlight2">
-      <h3>University of California Santa Barbara – Extension 2024 – 2025</h3>
-      <p><b><i>- Professional Certificate in Business Leadership</i></b></p>
-      <p><b><i>- Professional Certificate in Business Administration</i></b></p>
-    </div>
-  </section>
+      <nav class="mobile-nav-links">
+        <a href="#programs" data-i18n="navTraining">Training</a>
+        <a href="#about" data-i18n="navAbout">About</a>
+        <a href="#career" data-i18n="navCareer">Career</a>
+        <a href="#media" data-i18n="navMedia">Media</a>
+        <a href="#apply" data-i18n="navApply">Apply</a>
+        <a href="#contact" data-i18n="navContact">Contact</a>
+      </nav>
 
-  <section id="media">
-    <h2>Media</h2>
-    <img src="marko1.jpg" alt="Marko in action">
-    <img src="marko2.jpg" alt="Coach photo">
-    <img src="marko3.jpg" alt="Water polo">
-    <img src="marko4.jpg" alt="Training">
-    <img src="marko7.jpg" alt="Game moment">
-    <div class="video">
-      <iframe src="https://www.youtube.com/embed/Z1eZMpIoA2c" title="Interview after game" frameborder="0" allowfullscreen></iframe>
+      <div class="mobile-nav-footer">
+        <div>
+          <span data-i18n="menuReach">Reach out</span>
+          <a href="mailto:marko.ilic.wp@gmail.com">marko.ilic.wp@gmail.com</a>
+        </div>
+
+        <div>
+          <span data-i18n="menuInstagram">Instagram</span>
+          <a
+            href="https://instagram.com/ilic_marko6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            @ilic_marko6
+          </a>
+        </div>
+      </div>
+
     </div>
-  </section>
 
-  <section id="contact">
-    <h2>Contact</h2>
-    <p>Email: marko.ilic.wp@gmail.com</p>
-    <p>Instagram: <a href="https://instagram.com/ilic_marko6" target="_blank">@ilic_marko6</a></p>
-    <p>Linkedin: <a href=https://www.linkedin.com/in/marko-ilic-185a1a34a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app">Marko_Ilić</a></p>
-  </section>
+  </div>
 
-  <footer>
-    <p>&copy; 2025 Marko Ilić | Designed by Bogdan Drakulić</p>
+  <main>
+
+    <!-- ================================================================ -->
+    <!-- HERO                                                             -->
+    <!-- ================================================================ -->
+    <section class="hero" aria-labelledby="hero-title">
+
+      <img
+        class="hero-image"
+        src="marko3.jpg"
+        alt="Water polo training in the pool"
+      >
+
+      <div class="hero-overlay" aria-hidden="true"></div>
+      <div class="hero-energy" aria-hidden="true"></div>
+
+      <div class="hero-content container">
+
+        <p class="eyebrow" data-i18n="heroEyebrow">
+          ELITE DEVELOPMENT • PRIVATE COACHING • YOUTH TRAINING
+        </p>
+
+        <h1 id="hero-title" data-i18n-html="heroTitle">
+          BUILD THE PLAYER.<br>
+          BUILD THE PERSON.
+        </h1>
+
+        <p class="hero-lead" data-i18n="heroLead">
+          Individual and small-group training focused on technique,
+          decision-making, conditioning and confidence.
+        </p>
+
+        <div class="hero-actions-row">
+          <a class="button button-primary" href="#apply" data-i18n="heroApply">
+            Apply for training
+          </a>
+
+          <a class="button button-ghost" href="#about" data-i18n="heroMeet">
+            Meet the coach
+          </a>
+        </div>
+
+        <div class="hero-badges">
+          <span data-i18n="badgePrivate">Private work</span>
+          <span data-i18n="badgeSmallGroup">Small group</span>
+          <span data-i18n="badgePrep">Performance prep</span>
+        </div>
+
+      </div>
+
+      <a class="scroll-cue" href="#programs" aria-label="Scroll to training programs">
+        <span data-i18n="scrollLabel">Scroll</span>
+        <strong>↓</strong>
+      </a>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- QUICK APPLICATION BANNER                                         -->
+    <!-- ================================================================ -->
+    <section class="announcement">
+
+      <div class="container announcement-inner">
+
+        <div>
+          <p class="eyebrow dark" data-i18n="announcementEyebrow">
+            NOW ACCEPTING APPLICATIONS
+          </p>
+
+          <h2 data-i18n="announcementTitle">
+            Training for future champions
+          </h2>
+        </div>
+
+        <p data-i18n="announcementText">
+          Complete the short parent or guardian application below.
+          Just a few steps separate you from noticeable progress.
+        </p>
+
+        <a class="text-link" href="#apply" data-i18n="announcementLink">
+          APPLICATION FORM →
+        </a>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- TRAINING PROGRAMS                                                -->
+    <!-- ================================================================ -->
+    <section class="section" id="programs">
+
+      <div class="container">
+
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow dark" data-i18n="programsEyebrow">TRAINING</p>
+
+            <h2 data-i18n="programsTitle">
+              Focused development, not generic workouts.
+            </h2>
+          </div>
+
+          <p data-i18n="programsIntro">
+            Every session is built around the athlete's current level and goals,
+            with emphasis on technique, decision-making, movement and confidence.
+          </p>
+        </div>
+
+        <div class="program-grid">
+
+          <article class="program-card">
+            <span class="card-number">01</span>
+            <h3 data-i18n="program1Title">Private training</h3>
+
+            <p data-i18n="program1Text">
+              1-on-1 work with highly specific technical corrections and a tailored plan.
+            </p>
+
+            <ul>
+              <li data-i18n="program1Item1">Passing and shooting mechanics</li>
+              <li data-i18n="program1Item2">Leg strength, balance and body position</li>
+              <li data-i18n="program1Item3">Position-specific development</li>
+            </ul>
+          </article>
+
+          <article class="program-card featured-card">
+            <span class="card-number">02</span>
+            <h3 data-i18n="program2Title">Small group</h3>
+
+            <p data-i18n="program2Text">
+              Competitive repetitions with more decisions, movement and game-like situations.
+            </p>
+
+            <ul>
+              <li data-i18n="program2Item1">2 to 6 athletes</li>
+              <li data-i18n="program2Item2">Decision-making under pressure</li>
+              <li data-i18n="program2Item3">Competitive technical drills</li>
+            </ul>
+          </article>
+
+          <article class="program-card">
+            <span class="card-number">03</span>
+            <h3 data-i18n="program3Title">Performance prep</h3>
+
+            <p data-i18n="program3Text">
+              Targeted work for tryouts, camps, the upcoming season or higher-level competition.
+            </p>
+
+            <ul>
+              <li data-i18n="program3Item1">Game-specific conditioning</li>
+              <li data-i18n="program3Item2">Confidence and preparation</li>
+              <li data-i18n="program3Item3">Individual development plan</li>
+            </ul>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- PHOTO / STATEMENT                                                -->
+    <!-- ================================================================ -->
+    <section class="photo-break" aria-label="Water polo action image">
+
+      <img src="marko4.jpg" alt="Water polo action during a game">
+
+      <div class="photo-break-copy">
+        <p class="eyebrow" data-i18n="standardEyebrow">THE STANDARD</p>
+
+        <blockquote data-i18n="standardQuote">
+          Train with purpose. Compete with confidence.
+        </blockquote>
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- ABOUT                                                            -->
+    <!-- ================================================================ -->
+    <section class="section about-section" id="about">
+
+      <div class="container about-grid">
+
+        <div class="portrait-wrap">
+          <img src="marko8.jpg" alt="Portrait of water polo coach Marko Ilic">
+
+          <div class="portrait-tag" data-i18n="portraitTag">
+            COACH • ATHLETE • MENTOR
+          </div>
+        </div>
+
+        <div class="about-copy">
+          <p class="eyebrow dark" data-i18n="aboutEyebrow">ABOUT MARKO</p>
+
+          <h2 data-i18n="aboutTitle">
+            Experience in Europe and the United States.
+          </h2>
+
+          <p class="lead-copy" data-i18n="aboutLead">
+            Marko Ilic is a water polo coach and former high-level athlete focused on
+            technical growth, discipline and long-term player development.
+          </p>
+
+          <p data-i18n="aboutText1">
+            As head coach of 18U teams at Channel Islands United, he worked on
+            fundamentals, tactics and a culture of accountability and growth.
+          </p>
+
+          <p data-i18n="aboutText2">
+            He has coached at camps across Texas and California, and in Serbia he led
+            water polo and swimming programs for young athletes.
+          </p>
+
+          <p data-i18n="aboutText3">
+            His private coaching combines technical detail, physical preparation and
+            confidence-building in a demanding but supportive environment.
+          </p>
+
+          <div class="stat-row" aria-label="Coaching highlights">
+            <div>
+              <strong>EU + US</strong>
+              <span data-i18n="stat1">Coaching experience</span>
+            </div>
+
+            <div>
+              <strong>YOUTH</strong>
+              <span data-i18n="stat2">Player development</span>
+            </div>
+
+            <div>
+              <strong>1:1</strong>
+              <span data-i18n="stat3">Individual attention</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- CAREER                                                           -->
+    <!-- ================================================================ -->
+    <section class="section section-dark" id="career">
+
+      <div class="container">
+
+        <div class="section-heading">
+          <p class="eyebrow" data-i18n="careerEyebrow">CAREER</p>
+
+          <h2 data-i18n="careerTitle">
+            Playing experience that informs coaching.
+          </h2>
+        </div>
+
+        <div class="timeline">
+
+          <article>
+            <span class="timeline-year">2024–2025</span>
+
+            <div>
+              <h3>UC Santa Barbara</h3>
+              <p data-i18n="career1">Player in 2024–2025 and coach since 2025.</p>
+            </div>
+          </article>
+
+          <article>
+            <span class="timeline-year" data-i18n="careerCountry">SERBIA</span>
+
+            <div>
+              <h3 data-i18n="careerClubSabac">Water Polo Club Sabac</h3>
+              <p data-i18n="career2">
+                Won the national championship and cup double while competing as a defender.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span class="timeline-year" data-i18n="careerCountry">SERBIA</span>
+
+            <div>
+              <h3 data-i18n="careerClubZemun">Water Polo Club Zemun</h3>
+              <p data-i18n="career3">
+                Captained the team and helped lead it to promotion to a higher league.
+              </p>
+            </div>
+          </article>
+
+          <article>
+            <span class="timeline-year" data-i18n="careerNational">NATIONAL</span>
+
+            <div>
+              <h3 data-i18n="careerJuniorTeam">Serbian National Junior Team</h3>
+              <p data-i18n="career4">
+                Participated in international tournaments and youth championships.
+              </p>
+            </div>
+          </article>
+
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- MEDIA                                                            -->
+    <!-- ================================================================ -->
+    <section class="section" id="media">
+
+      <div class="container">
+
+        <div class="section-heading split-heading">
+          <div>
+            <p class="eyebrow dark" data-i18n="mediaEyebrow">MEDIA</p>
+            <h2 data-i18n="mediaTitle">On deck and in the water.</h2>
+          </div>
+
+          <p data-i18n="mediaIntro">
+            A selection of playing and coaching moments.
+          </p>
+        </div>
+
+        <div class="gallery-grid">
+          <img src="marko1.jpg" alt="Water polo action photo">
+          <img src="marko2.jpg" alt="Water polo coaching photo">
+          <img src="marko7.jpg" alt="Water polo match photo">
+          <img src="marko5.jpg" alt="Marko Ilic at the pool">
+        </div>
+
+        <div class="video-wrap">
+          <div class="video-copy">
+            <p class="eyebrow dark" data-i18n="videoEyebrow">VIDEO</p>
+            <h3 data-i18n="videoTitle">Interview after the game</h3>
+          </div>
+
+          <div class="video-frame">
+            <iframe
+              src="https://www.youtube.com/embed/Z1eZMpIoA2c"
+              title="Interview with Marko Ilic after a water polo game"
+              loading="lazy"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              allowfullscreen
+            ></iframe>
+          </div>
+        </div>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- TRAINING APPLICATION                                             -->
+    <!-- ================================================================ -->
+    <section class="section application-section" id="apply">
+
+      <div class="container application-grid">
+
+        <div class="application-intro">
+          <p class="eyebrow" data-i18n="applyEyebrow">APPLICATION</p>
+
+          <h2 data-i18n="applyTitle">Apply for training.</h2>
+
+          <p data-i18n="applyText">
+            Use the form to register yourself or your child for training.
+            For questions, suggestions or consultations, you can contact me at any time
+            using the details below.
+          </p>
+
+          <div class="privacy-note">
+            <strong data-i18n="privacyTitle">The hardest part is starting</strong>
+
+            <blockquote class="motivation-quote">
+              <p data-i18n="privacyQuote">
+                “He who dares can; he who knows no fear moves forward.”
+              </p>
+
+              <cite data-i18n="privacyAuthor">
+                Serbian Field Marshal Živojin Mišić
+              </cite>
+            </blockquote>
+          </div>
+
+          <div class="contact-short">
+            <span data-i18n="quickContact">Quick contact</span>
+            <a href="mailto:marko.ilic.wp@gmail.com">marko.ilic.wp@gmail.com</a>
+
+            <a
+              href="https://instagram.com/ilic_marko6"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              @ilic_marko6
+            </a>
+          </div>
+        </div>
+
+        <form class="application-form" id="training-form" novalidate>
+
+          <div class="form-row two-col">
+
+            <div class="field">
+              <label for="athleteName" data-i18n="fieldAthleteName">
+                Athlete full name *
+              </label>
+
+              <input
+                type="text"
+                id="athleteName"
+                name="athleteName"
+                autocomplete="name"
+                required
+                maxlength="80"
+              >
+            </div>
+
+            <div class="field">
+              <label for="athleteAge" data-i18n="fieldAthleteAge">
+                Athlete age *
+              </label>
+
+              <input
+                type="number"
+                id="athleteAge"
+                name="athleteAge"
+                min="5"
+                max="99"
+                inputmode="numeric"
+                required
+              >
+            </div>
+
+          </div>
+
+          <div class="form-row two-col">
+
+            <div class="field">
+              <label for="parentName" data-i18n="fieldParentName">
+                Parent / guardian name or your name *
+              </label>
+
+              <input
+                type="text"
+                id="parentName"
+                name="parentName"
+                autocomplete="name"
+                required
+                maxlength="80"
+              >
+            </div>
+
+            <div class="field">
+              <label for="email" data-i18n="fieldEmail">
+                Contact email *
+              </label>
+
+              <input
+                type="email"
+                id="email"
+                name="email"
+                autocomplete="email"
+                required
+                maxlength="120"
+              >
+            </div>
+
+          </div>
+
+          <div class="form-row two-col">
+
+            <div class="field">
+              <label for="phone" data-i18n="fieldPhone">Phone *</label>
+
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                autocomplete="tel"
+                required
+                maxlength="40"
+              >
+            </div>
+
+            <div class="field">
+              <label for="trainingType" data-i18n="fieldTrainingType">
+                Preferred training *
+              </label>
+
+              <select id="trainingType" name="trainingType" required>
+                <option value="" selected disabled data-i18n="optSelect">
+                  Select an option
+                </option>
+
+                <option value="Private 1-on-1" data-i18n="optPrivate">
+                  Private 1-on-1
+                </option>
+
+                <option value="Small group" data-i18n="optSmallGroup">
+                  Small group
+                </option>
+
+                <option value="Performance prep" data-i18n="optPerformance">
+                  Performance prep
+                </option>
+
+                <option value="Not sure yet" data-i18n="optNotSure">
+                  Not sure yet
+                </option>
+              </select>
+            </div>
+
+          </div>
+
+          <div class="field">
+            <label for="experience" data-i18n="fieldExperience">
+              Sports experience *
+            </label>
+
+            <select id="experience" name="experience" required>
+              <option value="" selected disabled data-i18n="optExperienceSelect">
+                Select experience level
+              </option>
+
+              <option value="Beginner" data-i18n="optBeginner">
+                Beginner / new to the world of sport
+              </option>
+
+              <option value="1-2 years" data-i18n="optOneTwo">1–2 years</option>
+              <option value="3-4 years" data-i18n="optThreeFour">3–4 years</option>
+              <option value="5+ years" data-i18n="optFivePlus">5+ years</option>
+            </select>
+          </div>
+
+          <div class="field">
+            <label for="message" data-i18n="fieldMessage">Goals or questions</label>
+
+            <textarea
+              id="message"
+              name="message"
+              rows="5"
+              maxlength="1000"
+              data-i18n-placeholder="messagePlaceholder"
+              placeholder="Tell us what the athlete would like to improve, preferred days and times, or anything else relevant to training."
+            ></textarea>
+          </div>
+
+          <!-- Hidden anti-spam field. Real users never see this. -->
+          <div class="honeypot" aria-hidden="true">
+            <label for="website">Website</label>
+            <input type="text" id="website" name="website" tabindex="-1" autocomplete="off">
+          </div>
+
+          <label class="consent">
+            <input type="checkbox" name="consent" value="Yes" required>
+
+            <span data-i18n="consentText">
+              I am the athlete, parent or guardian, or I am authorized to submit this
+              application, and I agree to be contacted about training. *
+            </span>
+          </label>
+
+          <button class="button button-primary form-submit" type="submit">
+            <span class="button-label" data-i18n="submitLabel">
+              Submit application
+            </span>
+
+            <span class="button-loading" aria-hidden="true" data-i18n="submitLoading">
+              Sending...
+            </span>
+          </button>
+
+          <p
+            class="form-status"
+            id="form-status"
+            role="status"
+            aria-live="polite"
+          ></p>
+
+        </form>
+
+      </div>
+
+    </section>
+
+    <!-- ================================================================ -->
+    <!-- CONTACT                                                          -->
+    <!-- ================================================================ -->
+    <section class="section contact-section" id="contact">
+
+      <div class="container contact-grid">
+
+        <div>
+          <p class="eyebrow dark" data-i18n="contactEyebrow">CONTACT</p>
+
+          <h2 data-i18n="contactTitle">
+            Let's make something big.
+          </h2>
+        </div>
+
+        <div class="contact-links">
+          <a href="mailto:marko.ilic.wp@gmail.com">
+            <span data-i18n="contactEmailLabel">Email</span>
+            <strong>marko.ilic.wp@gmail.com</strong>
+          </a>
+
+          <a
+            href="https://instagram.com/ilic_marko6"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="contactInstagramLabel">Instagram</span>
+            <strong>@ilic_marko6</strong>
+          </a>
+
+          <a
+            href="https://www.linkedin.com/in/marko-ilic-185a1a34a"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <span data-i18n="contactLinkedInLabel">LinkedIn</span>
+            <strong data-i18n="contactName">Marko Ilic</strong>
+          </a>
+        </div>
+
+      </div>
+
+    </section>
+
+  </main>
+
+  <!-- ================================================================ -->
+  <!-- FOOTER                                                           -->
+  <!-- ================================================================ -->
+  <footer class="site-footer">
+
+    <div class="container footer-inner">
+
+      <div class="footer-brand">
+        <img class="brand-logo small" src="mi-logo.png" alt="MI sports logo">
+
+        <div>
+          <strong data-i18n="brandName">MARKO ILIC</strong>
+          <span data-i18n="brandTagline">WATER POLO COACHING</span>
+        </div>
+      </div>
+
+      <p data-i18n-html="footerText">
+        © <span id="year"></span> Marko Ilic. Design: Drakula.
+      </p>
+
+      <a href="#top" data-i18n="backToTop">BACK TO TOP ↑</a>
+
+    </div>
+
   </footer>
+
 </body>
 </html>
