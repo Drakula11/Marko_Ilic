@@ -25,10 +25,10 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles-v10.css?v=final2">
+  <link rel="stylesheet" href="styles-v11.css">
   <script src="script.js" defer></script>
   <script src="ui-fixes.js?v=final1" defer></script>
-  <script src="form-fix.js?v=adult-fast-1" defer></script>
+  <script src="form-fix-v2.js" defer></script>
 </head>
 
 <body>
@@ -130,6 +130,10 @@
 
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-energy" aria-hidden="true"></div>
+
+      <p class="eyebrow hero-eyebrow-mobile" data-i18n="heroEyebrow">
+        ELITE DEVELOPMENT • PRIVATE COACHING • YOUTH TRAINING
+      </p>
 
       <div class="hero-content container">
 
@@ -556,7 +560,7 @@
 
             <div class="field">
               <label for="parentName" id="parentNameLabel">
-                Parent / guardian name (required only if under 18)
+                Parent / Guardian name (if the athlete is under 18)
               </label>
 
               <input
@@ -564,7 +568,6 @@
                 id="parentName"
                 name="parentName"
                 autocomplete="name"
-                required
                 maxlength="80"
               >
             </div>
