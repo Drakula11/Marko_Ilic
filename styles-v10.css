@@ -1258,3 +1258,19 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: none;
   }
 }
+
+
+/* ========================================================================== */
+/* V10.1 - GOLD HERO TEXT POSITION                                             */
+/* ========================================================================== */
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  /*
+    Move only the gold eyebrow text upward, directly below the header.
+    Everything else in the hero stays exactly where it was in V10.
+  */
+  .hero-content > .eyebrow {
+    transform: translateY(-150px);
+  }
+}
