@@ -1274,3 +1274,29 @@ button, a { -webkit-tap-highlight-color: transparent; }
     transform: translateY(-150px);
   }
 }
+
+
+/* ========================================================================== */
+/* V10.2 - SAFARI BOTTOM BAR MENU BACKGROUND                                  */
+/* ========================================================================== */
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  /*
+    iPhone Safari's bottom toolbar is translucent and can show the page
+    underneath the fixed menu. While the menu is open, make the page behind
+    it the same green and hide the normal page content.
+  */
+  body.menu-open {
+    background:
+      radial-gradient(circle at 78% 18%, rgba(139, 209, 144, 0.15), transparent 20%),
+      radial-gradient(circle at 20% 84%, rgba(215, 177, 93, 0.18), transparent 22%),
+      linear-gradient(135deg, #06110d 0%, #0b2218 48%, #103526 100%);
+    background-color: #071812;
+  }
+
+  body.menu-open main,
+  body.menu-open .site-footer {
+    visibility: hidden;
+  }
+}
