@@ -1360,3 +1360,33 @@ body.menu-open::before {
     transition: none;
   }
 }
+
+
+/* ========================================================================== */
+/* V7.1 - HERO POSITION TWEAK                                                  */
+/* ========================================================================== */
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  /*
+    Keep the V7/original mobile hero image exactly at its normal size and crop.
+  */
+  .hero {
+    min-height: 700px;
+  }
+
+  .hero-image {
+    object-position: 58% center;
+    transform: none;
+  }
+
+  /*
+    Move the hero text block slightly UP compared with V7.
+    V7 used 72px; 92px gives a small, controlled lift without changing
+    the image or the menu.
+  */
+  .hero-content {
+    padding-bottom: 92px;
+    transform: none;
+  }
+}
