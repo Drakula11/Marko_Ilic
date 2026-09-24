@@ -1337,3 +1337,57 @@ button, a { -webkit-tap-highlight-color: transparent; }
     visibility: hidden !important;
   }
 }
+
+
+/* ========================================================================== */
+/* FINAL 2 - MOBILE GOLD EYEBROW                                               */
+/* ========================================================================== */
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  /*
+    The previous translateY(-150px) moved the gold line behind the fixed
+    header. On mobile we anchor it directly to the hero instead.
+  */
+  .hero-content {
+    position: static;
+  }
+
+  .hero-content > .eyebrow {
+    position: absolute;
+    z-index: 4;
+
+    top: 88px;
+    left: 14px;
+    right: 14px;
+
+    margin: 0;
+
+    transform: none !important;
+  }
+}
+
+
+/* ========================================================================== */
+/* DESKTOP HERO - MATCH ENGLISH LAYOUT TO SERBIAN                              */
+/* ========================================================================== */
+
+@media (min-width: 681px) {
+
+  /*
+    The English headline is slightly wider than the Serbian one.
+    The old 920px max-width forced:
+      BUILD THE
+      PLAYER.
+      BUILD THE
+      PERSON.
+
+    Give only the English version more horizontal room so each phrase stays
+    on one line, matching the Serbian desktop layout:
+      BUILD THE PLAYER.
+      BUILD THE PERSON.
+  */
+  html[lang="en"] .hero h1 {
+    max-width: 1180px;
+  }
+}
