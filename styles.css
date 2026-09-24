@@ -1136,3 +1136,41 @@ button, a { -webkit-tap-highlight-color: transparent; }
 .back-to-top:hover {
   color: var(--green-4);
 }
+
+
+/* ========================================================================== */
+/* MOBILE PORTRAIT MENU COVERAGE FIX                                           */
+/* ========================================================================== */
+
+/*
+  On iPhone/Safari-style portrait layouts the browser's bottom UI can reveal
+  the page underneath a fixed menu. This extra underlay stays behind the menu
+  and extends beyond the visual viewport, so no light section peeks through.
+*/
+body.menu-open::before {
+  content: "";
+  position: fixed;
+  z-index: 1090;
+  top: -180px;
+  right: 0;
+  bottom: -260px;
+  left: 0;
+  pointer-events: none;
+
+  background:
+    radial-gradient(circle at 78% 18%, rgba(139, 209, 144, 0.15), transparent 20%),
+    radial-gradient(circle at 20% 84%, rgba(215, 177, 93, 0.18), transparent 22%),
+    linear-gradient(135deg, #06110d 0%, #0b2218 48%, #103526 100%);
+  background-color: #071812;
+}
+
+/*
+  Keep the actual menu sized to the visible area, while the underlay above
+  covers the extra browser-chrome area. Landscape behavior is left unchanged.
+*/
+@media (max-width: 680px) and (orientation: portrait) {
+  .mobile-nav {
+    height: 100dvh;
+    min-height: 100dvh;
+  }
+}
