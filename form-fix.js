@@ -1,21 +1,29 @@
 // ============================================================================
-// GOOGLE SHEETS FORM UX FIX
+// FAST GOOGLE SHEETS SUBMIT + ADULT ATHLETE FORM LOGIC
 // ============================================================================
 //
-// script.js remains untouched, including your Google Apps Script /exec URL.
+// IMPORTANT:
+// script.js stays untouched, including the Google Apps Script /exec URL.
 //
-// Google Apps Script can take several seconds to finish a redirected no-cors
-// request in Safari. This handler uses sendBeacon when available, so the
-// browser can queue the POST immediately without leaving the button on
-// "Sending..." for a long time.
+// 1. Adult athlete (18+) -> parent/guardian name is optional.
+// 2. Minor athlete (<18) -> parent/guardian name is required.
+// 3. For an adult who leaves that field blank, the athlete's own name is sent
+//    as the contact name so the existing Apps Script backend still accepts it.
+// 4. Safari no longer waits for Google's redirected no-cors response.
+//    sendBeacon queues the POST and the UI confirms it almost immediately.
 // ============================================================================
 
 const quickForm = document.querySelector("#training-form");
 const quickSubmitButton = quickForm?.querySelector(".form-submit");
 const quickFormStatus = document.querySelector("#form-status");
 
+const athleteNameInput = document.querySelector("#athleteName");
+const athleteAgeInput = document.querySelector("#athleteAge");
+const parentNameInput = document.querySelector("#parentName");
+const parentNameLabel = document.querySelector("#parentNameLabel");
 
-function quickText() {
+
+function quickCopy() {
   const isSerbian = document.documentElement.lang === "sr";
 
   return isSerbian
@@ -23,13 +31,15 @@ function quickText() {
         setup: "Google Sheets još nije povezan.",
         success: "Prijava je uspešno poslata. Marko će vam se javiti uskoro.",
         error: "Prijava nije mogla da se pošalje. Pokušajte ponovo ili kontaktirajte Marka.",
-        bot: "Hvala. Vaša prijava je primljena."
+        bot: "Hvala. Vaša prijava je primljena.",
+        parentLabel: "Ime roditelja / staratelja (obavezno samo za mlađe od 18)"
       }
     : {
         setup: "Google Sheets is not connected yet.",
         success: "Application sent successfully. Marko will get back to you soon.",
         error: "The application could not be sent. Please try again or contact Marko.",
-        bot: "Thank you. Your application has been received."
+        bot: "Thank you. Your application has been received.",
+        parentLabel: "Parent / guardian name (required only if under 18)"
       };
 }
 
@@ -62,37 +72,61 @@ function quickSetState(state, message = "") {
 }
 
 
-async function quickFetchFallback(url, body, copy) {
-  const controller = new AbortController();
-  const timeout = window.setTimeout(() => controller.abort(), 8000);
+function isAdultAthlete() {
+  const age = Number(athleteAgeInput?.value || 0);
 
-  try {
-    await fetch(url, {
-      method: "POST",
-      mode: "no-cors",
-      body,
-      signal: controller.signal
-    });
-
-    quickForm.reset();
-    quickSetState("success", copy.success);
-  } catch (error) {
-    console.error("Training application error:", error);
-    quickSetState("error", copy.error);
-  } finally {
-    window.clearTimeout(timeout);
-  }
+  return Number.isFinite(age) && age >= 18;
 }
+
+
+function syncParentRequirement() {
+  if (!parentNameInput || !parentNameLabel) {
+    return;
+  }
+
+  const copy = quickCopy();
+  const adult = isAdultAthlete();
+
+  parentNameLabel.textContent = copy.parentLabel;
+  parentNameInput.required = !adult;
+  parentNameInput.setAttribute("aria-required", String(!adult));
+}
+
+
+function showQueuedSuccess(copy) {
+  window.setTimeout(() => {
+    quickForm.reset();
+    syncParentRequirement();
+    quickSetState("success", copy.success);
+  }, 300);
+}
+
+
+athleteAgeInput?.addEventListener("input", syncParentRequirement);
+athleteAgeInput?.addEventListener("change", syncParentRequirement);
+
+
+// The normal language script runs first. Re-apply our conditional label after it.
+document.querySelectorAll(".lang-btn").forEach((button) => {
+  button.addEventListener("click", () => {
+    window.setTimeout(syncParentRequirement, 0);
+  });
+});
+
+
+syncParentRequirement();
 
 
 quickForm?.addEventListener(
   "submit",
   (event) => {
-    // Run before the older submit listener from script.js.
+    // Capture phase: stop the older fetch handler in script.js.
     event.preventDefault();
     event.stopImmediatePropagation();
 
-    const copy = quickText();
+    syncParentRequirement();
+
+    const copy = quickCopy();
 
     if (!quickForm.checkValidity()) {
       quickForm.reportValidity();
@@ -113,9 +147,23 @@ quickForm?.addEventListener(
     data.append("source", window.location.href);
     data.append("language", document.documentElement.lang || "en");
 
+    // Existing Apps Script currently expects parentName to contain a value.
+    // For an adult athlete, use the athlete's own name when the optional
+    // parent/guardian field is left blank.
+    if (
+      isAdultAthlete() &&
+      !String(data.get("parentName") || "").trim()
+    ) {
+      data.set(
+        "parentName",
+        String(data.get("athleteName") || "").trim()
+      );
+    }
+
     // Honeypot spam protection.
     if (String(data.get("website") || "").trim()) {
       quickForm.reset();
+      syncParentRequirement();
       quickSetState("success", copy.bot);
       return;
     }
@@ -128,41 +176,54 @@ quickForm?.addEventListener(
 
     quickSetState("loading", "");
 
+    // Fast path: Safari/iPhone/Chrome all support sendBeacon.
     if ("sendBeacon" in navigator) {
       const body = new Blob(
         [params.toString()],
-        { type: "application/x-www-form-urlencoded;charset=UTF-8" }
+        {
+          type: "application/x-www-form-urlencoded;charset=UTF-8"
+        }
       );
 
-      const accepted = navigator.sendBeacon(
+      const queued = navigator.sendBeacon(
         GOOGLE_SHEETS_WEB_APP_URL,
         body
       );
 
-      if (accepted) {
-        // Browser accepted the request into its delivery queue.
-        window.setTimeout(() => {
-          quickForm.reset();
-          quickSetState("success", copy.success);
-        }, 650);
-
+      if (queued) {
+        showQueuedSuccess(copy);
         return;
       }
     }
 
-    // Fallback for browsers that do not support sendBeacon.
-    quickFetchFallback(
-      GOOGLE_SHEETS_WEB_APP_URL,
-      params,
-      copy
-    );
+    // Fallback: start the no-cors POST, but do not wait for Google's redirect.
+    try {
+      fetch(
+        GOOGLE_SHEETS_WEB_APP_URL,
+        {
+          method: "POST",
+          mode: "no-cors",
+          keepalive: true,
+          body: params
+        }
+      ).catch((error) => {
+        console.error("Background training application error:", error);
+      });
+
+      showQueuedSuccess(copy);
+    } catch (error) {
+      console.error("Training application error:", error);
+      quickSetState("error", copy.error);
+    }
   },
   true
 );
 
 
-// Never restore the page with the button stuck on "Sending...".
+// Safari may restore a page from memory. Never leave the button loading.
 window.addEventListener("pageshow", () => {
+  syncParentRequirement();
+
   if (quickSubmitButton?.classList.contains("is-loading")) {
     quickSetState("idle", "");
   }
