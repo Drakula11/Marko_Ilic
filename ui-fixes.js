@@ -52,6 +52,7 @@ function uiOpenMenu() {
 
   uiMobileNav.classList.add("open");
   document.body.classList.add("menu-open");
+  document.documentElement.classList.add("menu-open-root");
 
   uiSetMenuAria();
 }
@@ -64,6 +65,7 @@ function uiCloseMenu() {
 
   uiMobileNav.classList.remove("open");
   document.body.classList.remove("menu-open");
+  document.documentElement.classList.remove("menu-open-root");
 
   uiSetMenuAria();
 }

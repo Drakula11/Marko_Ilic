@@ -1300,3 +1300,40 @@ button, a { -webkit-tap-highlight-color: transparent; }
     visibility: hidden;
   }
 }
+
+
+/* ========================================================================== */
+/* FINAL MENU BACKGROUND FIX                                                   */
+/* ========================================================================== */
+
+@media (max-width: 680px) and (orientation: portrait) {
+
+  /*
+    Safari's bottom toolbar is translucent. Give BOTH the root document and
+    the body the same green as the menu while it is open, so the toolbar has
+    no light/yellow page section to sample from underneath.
+  */
+  html.menu-open-root,
+  html.menu-open-root body,
+  body.menu-open {
+    background: #071812 !important;
+  }
+
+  /*
+    The fullscreen layer stays one solid surface. No background fade.
+  */
+  .mobile-nav,
+  .mobile-nav.open {
+    opacity: 1 !important;
+    transition: none !important;
+  }
+
+  /*
+    While the menu is open, remove the normal page from the composited scene.
+    Header + menu remain visible because they sit outside <main>.
+  */
+  body.menu-open main,
+  body.menu-open .site-footer {
+    visibility: hidden !important;
+  }
+}
