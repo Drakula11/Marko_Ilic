@@ -1,0 +1,33 @@
+MARKO ILIC - CAREER + MEDIA UPDATE
+
+Na GitHub uploaduj SVE fajlove iz ovog paketa.
+
+VAZNO:
+- script.js NIJE u paketu i ne diraj ga, tako da tvoj Google Sheets /exec link ostaje netaknut.
+- postojeci marko1.jpg, marko2.jpg, marko5.jpg i marko7.jpg ostaju u repozitorijumu jer ih galerija i dalje koristi.
+
+IZMENE:
+1. Slika u sekciji "Train with purpose / Treniraj sa svrhom" zamenjena je trazenom fotografijom.
+2. Career:
+   - UC Santa Barbara: NCAA DIVISION I
+   - novi Student-Athlete / Leadership Presence / Defensive Anchor opis
+   - Sabac: DOUBLE TITLE / DUPLA KRUNA
+   - Zemun: First defender... bez Captained
+   - Junior team: INTERNATIONAL / MEDJUNARODNO
+3. Sve nove fotografije dodate su u Media galeriju.
+4. Klik na bilo koju sliku otvara full-format lightbox sa X dugmetom; rade i strelice i Escape.
+5. Dva MOV snimka su pretvorena u kompatibilne MP4 fajlove i dodata u Media sekciju.
+6. Zadrzan je postojeci YouTube intervju.
+7. ENG/SR tekstovi za nove Career stavke i video sekciju rade preko novog media-gallery.js.
+
+Fajlovi koje treba uploadovati ukljucuju:
+- index.html
+- styles-v10.css
+- media-gallery.js
+- featured-coaching.jpg
+- sve media-*.jpg fajlove
+- training-clip-1.mp4
+- training-clip-2.mp4
+- oba training-clip-*-poster.jpg fajla
+
+Posle Commit changes sacekaj GitHub Pages deploy i uradi hard refresh / ponovo otvori tab.

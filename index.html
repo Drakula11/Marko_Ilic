@@ -25,10 +25,11 @@
     rel="stylesheet"
   >
 
-  <link rel="stylesheet" href="styles-v11.css">
+  <link rel="stylesheet" href="styles-v10.css?v=media2">
   <script src="script.js" defer></script>
   <script src="ui-fixes.js?v=final1" defer></script>
-  <script src="form-fix-v2.js" defer></script>
+  <script src="form-fix.js?v=adult-fast-1" defer></script>
+  <script src="media-gallery.js?v=media2" defer></script>
 </head>
 
 <body>
@@ -130,10 +131,6 @@
 
       <div class="hero-overlay" aria-hidden="true"></div>
       <div class="hero-energy" aria-hidden="true"></div>
-
-      <p class="eyebrow hero-eyebrow-mobile" data-i18n="heroEyebrow">
-        ELITE DEVELOPMENT • PRIVATE COACHING • YOUTH TRAINING
-      </p>
 
       <div class="hero-content container">
 
@@ -286,7 +283,7 @@
     <!-- ================================================================ -->
     <section class="photo-break" aria-label="Water polo action image">
 
-      <img src="marko4.jpg" alt="Water polo action during a game">
+      <img src="featured-coaching.jpg" alt="Coaching session beside the pool">
 
       <div class="photo-break-copy">
         <p class="eyebrow" data-i18n="standardEyebrow">THE STANDARD</p>
@@ -380,21 +377,21 @@
         <div class="timeline">
 
           <article>
-            <span class="timeline-year">2024–2025</span>
+            <span class="timeline-year" data-i18n="careerNCAA">NCAA DIVISION I</span>
 
             <div>
               <h3>UC Santa Barbara</h3>
-              <p data-i18n="career1">Player in 2024–2025 and coach since 2025.</p>
+              <p data-i18n="career1">Student-athlete with a strong leadership presence, serving as a defensive anchor through communication, composure and consistency.</p>
             </div>
           </article>
 
           <article>
-            <span class="timeline-year" data-i18n="careerCountry">SERBIA</span>
+            <span class="timeline-year" data-i18n="careerSabacLabel">DOUBLE TITLE</span>
 
             <div>
               <h3 data-i18n="careerClubSabac">Water Polo Club Sabac</h3>
               <p data-i18n="career2">
-                Won the national championship and cup double while competing as a defender.
+                Won the Serbian Championship and Serbian Cup to complete the double while contributing as a defender.
               </p>
             </div>
           </article>
@@ -405,13 +402,13 @@
             <div>
               <h3 data-i18n="careerClubZemun">Water Polo Club Zemun</h3>
               <p data-i18n="career3">
-                Captained the team and helped lead it to promotion to a higher league.
+                First defender and key contributor to the team's promotion to a higher league.
               </p>
             </div>
           </article>
 
           <article>
-            <span class="timeline-year" data-i18n="careerNational">NATIONAL</span>
+            <span class="timeline-year" data-i18n="careerInternational">INTERNATIONAL</span>
 
             <div>
               <h3 data-i18n="careerJuniorTeam">Serbian National Junior Team</h3>
@@ -445,11 +442,72 @@
           </p>
         </div>
 
-        <div class="gallery-grid">
-          <img src="marko1.jpg" alt="Water polo action photo">
-          <img src="marko2.jpg" alt="Water polo coaching photo">
-          <img src="marko7.jpg" alt="Water polo match photo">
-          <img src="marko5.jpg" alt="Marko Ilic at the pool">
+        <div class="gallery-grid expanded-gallery" aria-label="Photo gallery">
+
+          <button class="gallery-item gallery-wide" type="button" data-full="marko1.jpg">
+            <img src="marko1.jpg" alt="Water polo action moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item" type="button" data-full="marko2.jpg">
+            <img src="marko2.jpg" alt="Water polo coaching moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item" type="button" data-full="marko7.jpg">
+            <img src="marko7.jpg" alt="Water polo match moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-wide" type="button" data-full="marko5.jpg">
+            <img src="marko5.jpg" alt="Poolside sports moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-gym.jpg">
+            <img src="media-gym.jpg" alt="Strength and conditioning session" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-marko-polo.jpg">
+            <img src="media-marko-polo.jpg" alt="Poolside supporter photo" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-beach.jpg">
+            <img src="media-beach.jpg" alt="Beach training and team moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-wide" type="button" data-full="featured-coaching.jpg">
+            <img src="featured-coaching.jpg" alt="Coaching beside the pool" loading="lazy">
+          </button>
+
+          <button class="gallery-item" type="button" data-full="media-award-duo.jpg">
+            <img src="media-award-duo.jpg" alt="Water polo award moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-award-coach.jpg">
+            <img src="media-award-coach.jpg" alt="Water polo season recognition" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-medals-night.jpg">
+            <img src="media-medals-night.jpg" alt="Medal celebration" loading="lazy">
+          </button>
+
+          <button class="gallery-item" type="button" data-full="media-serbian-bowl.jpg">
+            <img src="media-serbian-bowl.jpg" alt="Team championship celebration" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-tall" type="button" data-full="media-serbia-juniors.jpg">
+            <img src="media-serbia-juniors.jpg" alt="Junior national team moment" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-wide" type="button" data-full="media-champions-team.jpg">
+            <img src="media-champions-team.jpg" alt="Championship team celebration" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-wide" type="button" data-full="media-youth-medals.jpg">
+            <img src="media-youth-medals.jpg" alt="Youth water polo team after competition" loading="lazy">
+          </button>
+
+          <button class="gallery-item gallery-wide" type="button" data-full="media-coaching-deck.jpg">
+            <img src="media-coaching-deck.jpg" alt="Coaching players during a pool session" loading="lazy">
+          </button>
+
         </div>
 
         <div class="video-wrap">
@@ -466,6 +524,23 @@
               allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
               allowfullscreen
             ></iframe>
+          </div>
+        </div>
+
+        <div class="local-video-section">
+          <div class="local-video-heading">
+            <p class="eyebrow dark" data-i18n="videoClipsEyebrow">TRAINING CLIPS</p>
+            <h3 data-i18n="videoClipsTitle">More moments from training and competition</h3>
+          </div>
+
+          <div class="local-video-grid">
+            <video controls playsinline preload="metadata" poster="training-clip-1-poster.jpg">
+              <source src="training-clip-1.mp4" type="video/mp4">
+            </video>
+
+            <video controls playsinline preload="metadata" poster="training-clip-2-poster.jpg">
+              <source src="training-clip-2.mp4" type="video/mp4">
+            </video>
           </div>
         </div>
 
@@ -560,7 +635,7 @@
 
             <div class="field">
               <label for="parentName" id="parentNameLabel">
-                Parent / Guardian name (if the athlete is under 18)
+                Parent / guardian name (required only if under 18)
               </label>
 
               <input
@@ -568,6 +643,7 @@
                 id="parentName"
                 name="parentName"
                 autocomplete="name"
+                required
                 maxlength="80"
               >
             </div>
@@ -754,6 +830,22 @@
   <!-- ================================================================ -->
   <!-- FOOTER                                                           -->
   <!-- ================================================================ -->
+
+  <!-- ================================================================ -->
+  <!-- IMAGE LIGHTBOX                                                   -->
+  <!-- ================================================================ -->
+  <div class="image-lightbox" id="image-lightbox" aria-hidden="true">
+    <button class="lightbox-close" type="button" aria-label="Close image">×</button>
+    <button class="lightbox-nav lightbox-prev" type="button" aria-label="Previous image">‹</button>
+
+    <figure class="lightbox-figure">
+      <img class="lightbox-image" src="" alt="">
+      <figcaption class="lightbox-caption"></figcaption>
+    </figure>
+
+    <button class="lightbox-nav lightbox-next" type="button" aria-label="Next image">›</button>
+  </div>
+
   <footer class="site-footer">
 
     <div class="container footer-inner">
