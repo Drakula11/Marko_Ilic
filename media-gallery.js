@@ -8,7 +8,7 @@
   // --------------------------------------------------------------------------
   if (typeof translations !== "undefined") {
     Object.assign(translations.en, {
-      careerNCAA: "NCAA DIVISION I",
+      careerNCAA: "NCAA DIVISION",
       careerSabacLabel: "DOUBLE TITLE",
       careerInternational: "INTERNATIONAL",
       careerClubSabac: "Water Polo Club Šabac",
@@ -21,11 +21,11 @@
       career4:
         "Competed with Serbia's junior national team at international tournaments and youth championships.",
       videoClipsEyebrow: "TRAINING CLIPS",
-      videoClipsTitle: "More moments from training and competition"
+      videoClipsTitle: "Some of the goals scored for the national team"
     });
 
     Object.assign(translations.sr, {
-      careerNCAA: "NCAA DIVIZIJA I",
+      careerNCAA: "NCAA DIVIZIJA",
       careerSabacLabel: "DUPLA KRUNA",
       careerInternational: "MEĐUNARODNO",
       careerClubSabac: "Vaterpolo klub Šabac",
@@ -38,7 +38,7 @@
       career4:
         "Nastupao za juniorsku reprezentaciju Srbije na međunarodnim turnirima i prvenstvima mlađih kategorija.",
       videoClipsEyebrow: "SNIMCI",
-      videoClipsTitle: "Još trenutaka sa treninga i takmičenja"
+      videoClipsTitle: "Neki od golova postignuti za reprezentaciju"
     });
 
     if (typeof setActiveLanguage === "function") {
@@ -52,7 +52,6 @@
   const items = Array.from(document.querySelectorAll(".gallery-item"));
   const lightbox = document.querySelector("#image-lightbox");
   const lightboxImage = lightbox?.querySelector(".lightbox-image");
-  const lightboxCaption = lightbox?.querySelector(".lightbox-caption");
   const closeButton = lightbox?.querySelector(".lightbox-close");
   const prevButton = lightbox?.querySelector(".lightbox-prev");
   const nextButton = lightbox?.querySelector(".lightbox-next");
@@ -85,10 +84,6 @@
 
     lightboxImage.src = fullSource;
     lightboxImage.alt = description;
-
-    if (lightboxCaption) {
-      lightboxCaption.textContent = description;
-    }
   }
 
   function openLightbox(index, trigger) {
